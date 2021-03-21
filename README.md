@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# tokenart-interface
+
+An open source interface for Tokenart
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
