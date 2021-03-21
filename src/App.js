@@ -1,18 +1,31 @@
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom'
 import './App.css'
-import { SimpleGrid, Box } from '@chakra-ui/react'
+import Home from './components/Home'
+import Market from './components/Market'
+import Nav from './components/Nav'
 
 function App() {
   return (
-    <div className="App">
-      <SimpleGrid columns={2} spacing={10}>
-        <Box bg="tomato" height="80px"/>
-        <Box bg="tomato" height="80px"/>
-        <Box bg="tomato" height="80px"/>
-        <Box bg="tomato" height="80px"/>
-        <Box bg="tomato" height="80px"/>
-      </SimpleGrid>
-    </div>
+    <Router>
+      <div>
+        <Nav />
+
+        <Switch>
+          <Route path='/market'>
+            <Market />
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
-export default App;
+export default App
