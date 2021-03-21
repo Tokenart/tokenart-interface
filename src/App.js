@@ -1,18 +1,13 @@
-import './App.css'
-import { SimpleGrid, Box } from '@chakra-ui/react'
+import Nav from "./components/Nav/Nav";
+import MainContainer from "./containers/MainContainer";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <SimpleGrid columns={2} spacing={10}>
-        <Box bg="tomato" height="80px"/>
-        <Box bg="tomato" height="80px"/>
-        <Box bg="tomato" height="80px"/>
-        <Box bg="tomato" height="80px"/>
-        <Box bg="tomato" height="80px"/>
-      </SimpleGrid>
-    </div>
-  )
-}
+    <>
+      <Nav />
+      <MainContainer />
+    </>
+  );
+};
 
 export default App;
