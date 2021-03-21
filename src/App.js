@@ -1,11 +1,16 @@
-import Nav from "./components/Nav/Nav";
-import MainContainer from "./containers/MainContainer";
+import Nav from "./components/Nav";
+import MarketContainer from "./containers/MarketContainer";
+import QuestionnaireContainer from "./containers/QuestionnaireContainer";
+import { Route, Switch } from "react-router-dom";
 
 const App = () => {
   return (
     <>
       <Nav />
-      <MainContainer />
+      <Switch>
+        <Route path="/" exact component={MarketContainer} />
+        <Route path="/questionnaire" exact component={QuestionnaireContainer} />
+      </Switch>
     </>
   );
 };

@@ -1,18 +1,11 @@
 import React from "react";
-import icon from "../../assets/eth-icon.png";
-import {
-  Link,
-  Image,
-  Flex,
-  Button,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import icon from "../assets/eth-icon.png";
+import { Image, Flex, Button, useColorMode } from "@chakra-ui/react";
 import { MoonIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const color = useColorModeValue("grey.800", "white");
 
   return (
     <Flex
@@ -23,7 +16,10 @@ export default function Nav() {
     >
       <Image ml={5} src={icon} alt="Logo" />
       <Flex mr={10} align="center">
-        <Link mr={7} color={color}>
+        <Link to="/questionnaire" style={{ marginRight: "1rem" }}>
+          Questionnaire
+        </Link>
+        <Link to="/" style={{ marginRight: "1rem" }}>
           Market
         </Link>
         <Button mr={7} onClick={toggleColorMode}>
