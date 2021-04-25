@@ -1,31 +1,18 @@
-import React from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom'
-import './App.css'
-import Home from './components/Home'
-import Market from './components/Market'
-import Nav from './components/Nav'
+import Nav from "./components/Nav";
+import MarketContainer from "./containers/MarketContainer";
+import QuestionnaireContainer from "./containers/QuestionnaireContainer";
+import { Route, Switch } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <div>
-        <Nav />
+    <>
+      <Nav />
+      <Switch>
+        <Route path="/" exact component={MarketContainer} />
+        <Route path="/questionnaire" exact component={QuestionnaireContainer} />
+      </Switch>
+    </>
+  );
+};
 
-        <Switch>
-          <Route path='/market'>
-            <Market />
-          </Route>
-          <Route path='/'>
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  )
-}
-
-export default App
+export default App;
